@@ -17,6 +17,6 @@ System.out.print(str+"\n");
 System.out.print(d +"\n");   
 System.out.print(f+"\n");   
 System.out.printf("'%s' %n", "javatpoint");  
-System.out.printf("'%S' %n", "Jack");  
+System.out.printf("'%S' %n", "Dan");  
 }   
 }  ;
