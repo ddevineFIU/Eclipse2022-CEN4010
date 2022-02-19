@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS 'books'; 
+DROP TABLE IF EXISTS  book; 
 
-	SET characterset_client = utf8mb4;
-CREATE TABLE 'books' ( 
-	'id' int (11) NOT NULL,
-	 'name' varchar(45) NOT NULL,
-	 'author' varchar(45) NOT NULL,
-	 PRIMARY KEY ('id')
+	
+CREATE TABLE book ( 
+	id int (11) NOT NULL,
+	 name varchar(45) NOT NULL,
+	 author varchar(45) NOT NULL,
+	 PRIMARY KEY (id)
 );
