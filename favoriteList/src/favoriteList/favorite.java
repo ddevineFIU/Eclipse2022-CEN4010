@@ -7,7 +7,7 @@ public class favorite {
 		boolean like = true;
 		
 		if(true) {
-			System.out.println("You did not add this to your favorite list.");
+			System.out.println("You added this to your favorite list.");
 		}
 		
 	}	
