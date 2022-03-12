@@ -20,16 +20,9 @@ public class BookService {
     @Autowired
     private Bookrepository repository;
 
-//    @PostConstruct
-//    public void initDB() {
-//        List<Product> products = IntStream.rangeClosed(1, 200)
-//                .mapToObj(i -> new Product("product" + i, new Random().nextInt(100), new Random().nextInt(50000)))
-//                .collect(Collectors.toList());
-//        repository.saveAll(products);
-//    }
 
 
-    public List<book> findAllBooks() {
+    public List<book> findAll() {
         return repository.findAll();
     }
 
