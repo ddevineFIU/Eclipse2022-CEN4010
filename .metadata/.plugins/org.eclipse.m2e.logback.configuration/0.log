@@ -2407,6 +2407,7 @@ org.eclipse.core.runtime.CoreException: Launch configuration ASTFrame references
 2022-02-21 21:22:30,599 [Worker-17: Launching Executing generate-sources in C__Users_UnotCookin_Desktop_demo] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\UnotCookin\Desktop\demo
 2022-02-21 21:22:30,600 [Worker-17: Launching Executing generate-sources in C__Users_UnotCookin_Desktop_demo] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B generate-sources
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 2022-03-18 22:38:55,571 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2022-03-20 19:49:53,606 [Worker-10: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2022-03-20 19:50:41,781 [Worker-8: Launching demo] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.8.2/junit-platform-launcher-1.8.2.jar
@@ -4748,6 +4749,9 @@ org.eclipse.core.runtime.CoreException: Launch configuration server_frame refere
 2022-03-22 22:35:26,828 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2022-03-22 22:49:58,133 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2022-03-27 19:35:04,210 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+=======
+2022-03-26 08:30:50,171 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+>>>>>>> Stashed changes
 =======
 2022-03-26 08:30:50,171 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 >>>>>>> Stashed changes
