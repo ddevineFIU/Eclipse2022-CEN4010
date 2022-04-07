@@ -16,30 +16,26 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `profile`
+-- Table structure for table `wishlist`
 --
 
-DROP TABLE IF EXISTS `profile`;
+DROP TABLE IF EXISTS `wishlist`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `profile` (
-  `name` varchar(255) NOT NULL,
-  `profile_id` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `card` int NOT NULL,
-  PRIMARY KEY (`profile_id`)
+CREATE TABLE `wishlist` (
+  `id` varchar(255) NOT NULL,
+  `profile_id` varchar(255) DEFAULT NULL,
+  `book_id` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `profile`
+-- Dumping data for table `wishlist`
 --
 
-LOCK TABLES `profile` WRITE;
-/*!40000 ALTER TABLE `profile` DISABLE KEYS */;
-INSERT INTO `profile` VALUES ('Devine','1','ddevi015@fiu.edu','pw1',1111),('Ellingson','2','telli@fiu.edu','pw2',2222),('Derisca','3','cderi@fiu.edu','pw3',3333),('Escobar','4','aesco@fiu.edu','pw4',4444),('Duque','5','dduqu@fiu.edu','pw5',5555),('Davis','6','pdavi@fiu.edu','pw6',7777);
-/*!40000 ALTER TABLE `profile` ENABLE KEYS */;
+LOCK TABLES `wishlist` WRITE;
+/*!40000 ALTER TABLE `wishlist` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wishlist` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
