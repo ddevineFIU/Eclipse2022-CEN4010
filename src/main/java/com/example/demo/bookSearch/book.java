@@ -18,13 +18,15 @@ public class book {
 
 	private String bookname;
 
+	private String genre;
+	
 	private Integer copiessold;
 
-	public Integer getId() {
+	public Integer getISBN() {
 		return ISBN;
 	}
 
-	public void setId(Integer ISBN) {
+	public void setISBN(Integer ISBN) {
 		this.ISBN = ISBN;
 	}
 
@@ -50,6 +52,14 @@ public class book {
 
 	public void setCopiesSold(Integer copiessold) {
 		this.copiessold = copiessold;
+	}
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
 	
 	

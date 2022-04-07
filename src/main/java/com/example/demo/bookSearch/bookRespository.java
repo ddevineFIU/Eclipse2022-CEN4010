@@ -11,9 +11,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface bookRespository extends JpaRepository<book, Integer> {
 
-	List<book> findByauthorIgnoreCase(String author);
+	List<book> findBygenreIgnoreCase(String genre);
 
-	List<book> findBybooknameIgnoreCase(String bookname);
+	List<book> findByISBN(Integer ISBN);
 
 	List<book> findBycopiessold(Integer copiessold);
 
