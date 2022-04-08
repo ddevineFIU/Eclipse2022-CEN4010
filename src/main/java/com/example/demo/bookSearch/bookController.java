@@ -64,11 +64,7 @@ public class bookController {
 
 	}
 
-	@GetMapping(path = "/HelloWorld")
-	public String HelloWorld() {
-		return "Hello World";
-	}
-
+	
 	@GetMapping(path = "/search/genre")
 	public ResponseEntity<List<book>> getBooksByName(@RequestParam String genre) {
 		return new ResponseEntity<>(BooksRepository.findBygenreIgnoreCase(genre), HttpStatus.OK);
