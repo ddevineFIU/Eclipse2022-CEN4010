@@ -17,8 +17,11 @@ public class aurthorController {
 	private authorRespository authorRepository;
 
 	@GetMapping(path = "/Authors")
-	public @ResponseBody Iterable<Author> getAllauthors() {
+	public @ResponseBody Iterable<author> getAllauthors(String author,int id) {
 // This returns a JSON or XML with the Bookss
+		
+		
+		authorRepository.saveAndFlush(new author(author,"test","test",id));
 		return authorRepository.findAll();
 	}
 	

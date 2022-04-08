@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
 // CRUD refers Create, Read, Update, Delete
 @Repository
-public interface authorRespository extends JpaRepository<Author, Integer> {
+public interface authorRespository extends JpaRepository<author, Integer> {
 
 
 	

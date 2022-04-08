@@ -1,3 +1,5 @@
+// DO NOT FUCKING TOUCH 
+
 package com.example.demo.bookSearch;
 
 import java.util.List;
@@ -12,7 +14,9 @@ import org.springframework.stereotype.Repository;
 public interface bookRespository extends JpaRepository<book, Integer> {
 
 	List<book> findBygenreIgnoreCase(String genre);
-
+	
+	
+	//example search
 	List<book> findByISBN(Integer ISBN);
 
 	List<book> findBycopiessold(Integer copiessold);
