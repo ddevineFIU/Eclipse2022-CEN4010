@@ -27,7 +27,7 @@ public class bookController {
 		List<book> books = new ArrayList<>();
 
 		for (int i = 0; i < list.size(); i++) {
-			list.get(i).getcopiessold();
+			list.get(i).getCopiessold();
 			if (books.size() < 10) {
 
 				books.add(list.get(i));
@@ -37,7 +37,7 @@ public class bookController {
 				sort(books);
 			}
 			if(books.size() == 10) {
-				if(list.get(i).getcopiessold() > books.get(books.size()-1).getcopiessold()) {
+				if(list.get(i).getCopiessold() > books.get(books.size()-1).getCopiessold()) {
 					books.set(books.size()-1, list.get(i));
 
 				}
@@ -52,7 +52,7 @@ public class bookController {
 	private void sort(List<book> books) {
 		for (int x = 0; x < 10; x++) {
 			for (int c = x; c < 10; c++) {
-				if (books.get(x).getcopiessold() < books.get(c).getcopiessold()) {
+				if (books.get(x).getCopiessold() < books.get(c).getCopiessold()) {
 
 					book bookTemp = books.get(x);
 					books.set(x, books.get(c));
