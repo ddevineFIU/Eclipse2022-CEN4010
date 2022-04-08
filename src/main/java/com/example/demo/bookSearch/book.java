@@ -17,8 +17,16 @@ public class book {
 	private String author;
 
 	private String bookname;
+	
+	private String bookDescription;
+	
+	private float price;
 
 	private String genre;
+	
+	private String  publisher;
+	
+	private int yearPublished;
 	
 	private Integer copiessold;
 
@@ -26,32 +34,40 @@ public class book {
 		return ISBN;
 	}
 
-	public void setISBN(Integer ISBN) {
-		this.ISBN = ISBN;
+	public void setISBN(Integer iSBN) {
+		ISBN = iSBN;
 	}
 
-	public String getauthor() {
+	public String getAuthor() {
 		return author;
 	}
 
-	public void setauthor(String author) {
+	public void setAuthor(String author) {
 		this.author = author;
 	}
 
-	public String getbookname() {
+	public String getBookname() {
 		return bookname;
 	}
 
-	public void setbookname(String bookname) {
+	public void setBookname(String bookname) {
 		this.bookname = bookname;
 	}
 
-	public Integer getcopiessold() {
-		return copiessold;
+	public String getBookDescription() {
+		return bookDescription;
 	}
 
-	public void setCopiesSold(Integer copiessold) {
-		this.copiessold = copiessold;
+	public void setBookDescription(String bookDescription) {
+		this.bookDescription = bookDescription;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
 	}
 
 	public String getGenre() {
@@ -61,6 +77,34 @@ public class book {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
+
+	public String getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+
+	public int getYearPublished() {
+		return yearPublished;
+	}
+
+	public void setYearPublished(int yearPublished) {
+		this.yearPublished = yearPublished;
+	}
+
+	public Integer getCopiessold() {
+		return copiessold;
+	}
+
+	public void setCopiessold(Integer copiessold) {
+		this.copiessold = copiessold;
+	}
+	
+	
+
+	
 	
 	
 

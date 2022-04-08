@@ -37,9 +37,9 @@ public class authorContorller {
 
     }
 	
-	@GetMapping(path = "/Author/AllBooks")
-	public @ResponseBody List<author> getBooks() {
-		return austhorRepository.findAll();
+	@GetMapping(path = "/Author/all")
+	public @ResponseBody List<Author> getBooks() {
+		return AuthorRepository.findAll();
 
 	}
 
