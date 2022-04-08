@@ -1,4 +1,4 @@
-package com.example.demo.bookDetails;
+package com.example.demo.BookDetails;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
