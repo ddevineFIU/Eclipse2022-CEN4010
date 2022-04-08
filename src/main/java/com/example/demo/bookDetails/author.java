@@ -1,4 +1,4 @@
-package com.example.demo.BookDetails;
+package com.example.demo.bookDetails;
 
 
 import javax.persistence.Entity;
