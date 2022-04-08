@@ -1,4 +1,4 @@
-package com.example.demo.BookDetails;
+package com.example.demo.bookDetails;
 
 
 import javax.persistence.Entity;
@@ -11,36 +11,23 @@ import javax.persistence.Table;
 @Table(name = "author")
 public class author {
 
-	@Id
-	private int authorid;
-	
+	@Id	
 	private String author;
 	
 	private String biography;
 	
 	private String publisher;
-
-	
 	
 	public author() {
 		
 	}
-	public author(String author, String biography, String publisher, int authorid) {
+	public author(String author, String biography, String publisher) {
 		super();
-		this.authorid = authorid;
 		this.author = author;
 		this.biography = biography;
 		this.publisher = publisher;
 	}
 
-	
-	
-	public int getAuthorId() {
-		return authorid;
-	}
-	public void setAuthorId(int authorId) {
-		this.authorid = authorId;
-	}
 	public String getAuthor() {
 		return author;
 	}

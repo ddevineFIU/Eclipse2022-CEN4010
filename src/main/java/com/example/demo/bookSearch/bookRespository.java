@@ -15,9 +15,10 @@ public interface bookRespository extends JpaRepository<book, Integer> {
 
 	List<book> findBygenreIgnoreCase(String genre);
 	
+	List<book> findByAuthor(String author);	
 	
 	//example search
-	List<book> findByISBN(Integer ISBN);
+	List<book> findByisbn(Integer isbn);
 
 	List<book> findBycopiessold(Integer copiessold);
 

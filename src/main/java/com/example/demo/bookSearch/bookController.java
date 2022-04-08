@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.bookDetails.author;
+
 @RestController
 @Controller // This means that this class is a Controller
 public class bookController {
@@ -77,8 +79,8 @@ public class bookController {
 	}
 
 	@GetMapping(path = "/search/book")
-	public ResponseEntity<List<book>> findByisbn(@RequestParam Integer ISBN) {
-		return new ResponseEntity<>(BooksRepository.findByISBN(ISBN), HttpStatus.OK);
+	public ResponseEntity<List<book>> findByisbn(@RequestParam Integer isbn) {
+		return new ResponseEntity<>(BooksRepository.findByisbn(isbn), HttpStatus.OK);
 
 	}
 	
@@ -88,6 +90,19 @@ public class bookController {
 
 	}
 
+	@GetMapping(path = "/search/author")
+	public ResponseEntity<List<book>> findByAuthor(@RequestParam String author) {
+		return new ResponseEntity<>(BooksRepository.findByAuthor(author), HttpStatus.OK);
+
+	}
+	
+	@GetMapping(path = "/Book/Add") //Must Have 8 KEYS
+	public @ResponseBody Iterable<book> getAllBooksADD(Integer isbn, String author, String bookname, String bookdescrip, Float price,
+            String genre, String publisher, Integer yearpublished, Integer copiessold) {
+	// This returns a JSON or XML with the Books	
+		BooksRepository.saveAndFlush(new book(isbn, author, bookname, bookdescrip, price, genre, publisher, yearpublished, copiessold));
+		return BooksRepository.findAll();
+	}
 	
 	
 
