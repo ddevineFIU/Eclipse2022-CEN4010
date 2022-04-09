@@ -23,24 +23,12 @@ public class wishController {
 	private wishRespository wishRepository;
 	
 	@GetMapping(path = "/wishlist")
-	public @ResponseBody Iterable<wishList> getAllwish(String author,int id) {
-// This returns a JSON or XML with the Books
-	
-	
-		wishRepository.saveAndFlush(new author(author,"test","test",id));
+	public @ResponseBody Iterable<wishList> getAllwish(int ISBN, String bookName,String username) {
+
+		// This returns a JSON or XML with the Books
+		wishRepository.saveAndFlush(new wishList(ISBN,bookName,username,));
 		return wishRepository.findAll();
-	
-	
-	
+
 	}
-	
-	
-	//testing wishlist controller
-	@GetMapping(path = "/HelloWorld")
-	public String HelloWorld() {
-		return "Hello World";
-	}
-	
-	
 	
 }
