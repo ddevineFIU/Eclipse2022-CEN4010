@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.bookDetails.author;
+import com.example.demo.objects.book;
 
 @RestController
 @Controller // This means that this class is a Controller
@@ -68,6 +68,30 @@ public class bookController {
 
 
 	}
+	
+	
+	@GetMapping(path = "/search/bookPlacement")
+	public @ResponseBody Iterable<book> getAllBookss(int place) {
+
+		List<book> list = BooksRepository.findAll();
+		List<book> books = new ArrayList<>();
+		if(place >= list.size()) {
+			place = list.size()-1;
+		}
+		for (int i = place; i > 0; i--) {
+			
+			books.add(list.get(i));
+		}
+	
+		Iterable<book> rbooks = books;
+		return rbooks;
+	}
+
+	
+
+
+	
+	
 
 	
 	

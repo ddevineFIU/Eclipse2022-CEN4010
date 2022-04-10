@@ -1,4 +1,4 @@
-package com.example.demo.bookDetails;
+package com.example.demo.BookDetails;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.bookSearch.book;
+import com.example.demo.objects.author;
 
 
 
