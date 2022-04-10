@@ -1,5 +1,5 @@
 // DO NOT FUCKING TOUCH 
-package com.example.demo.bookSearch;
+package com.example.demo.objects;
 
 
 import javax.persistence.Entity;

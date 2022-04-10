@@ -23,12 +23,12 @@ public class wishList {
 	}
 	public wishList(int isbn, String bookName, String username) {
 		super();
-		this.Isbn = isbn;
+		this.isbn = isbn;
 		this.bookName = bookName;
 		this.username = username;
 	}
 
-	public String getIsbn() {
+	public int getIsbn() {
 		return isbn;
 	}
 
