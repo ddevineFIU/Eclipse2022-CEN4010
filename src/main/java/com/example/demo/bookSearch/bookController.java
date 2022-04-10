@@ -26,7 +26,7 @@ public class bookController {
 	private bookRespository BooksRepository;
 
 	@GetMapping(path = "/search/top10")
-	public @ResponseBody Iterable<book> getAllBookss() {
+	public @ResponseBody Iterable<book> gettop10() {
 // This returns a JSON or XML with the Bookss
 		List<book> list = BooksRepository.findAll();
 		List<book> books = new ArrayList<>();
@@ -71,7 +71,7 @@ public class bookController {
 	
 	
 	@GetMapping(path = "/search/bookPlacement")
-	public @ResponseBody Iterable<book> getAllBookss(int place) {
+	public @ResponseBody Iterable<book> getbookPlacement(int place) {
 
 		List<book> list = BooksRepository.findAll();
 		List<book> books = new ArrayList<>();
