@@ -27,6 +27,7 @@ CREATE TABLE `wishlist` (
   `profile_id` varchar(255) DEFAULT NULL,
   `book_id` varchar(255) DEFAULT NULL
   PRIMARY KEY ('isbn','bookName','username')
+  FOREIGN KEY (isbn) REFERENCES book(isbn)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
