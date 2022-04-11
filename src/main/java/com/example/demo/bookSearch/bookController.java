@@ -97,7 +97,7 @@ public class bookController {
 	
 	//example search
 	@GetMapping(path = "/search/genre")
-	public ResponseEntity<List<book>> getBooksByName(@RequestParam String genre) {
+	public ResponseEntity<List<book>> getBooksBygenre(@RequestParam String genre) {
 		return new ResponseEntity<>(BooksRepository.findBygenreIgnoreCase(genre), HttpStatus.OK);
 
 	}
