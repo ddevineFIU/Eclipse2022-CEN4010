@@ -23,12 +23,12 @@ DROP TABLE IF EXISTS `profile`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `profile` (
-  `name` varchar(45) NOT NULL,
-  `username` varchar(45) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `profile_id` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `card` int NOT NULL,
-  PRIMARY KEY (`name`,`card`,`password`,`email`,`username`)
+  PRIMARY KEY (`profile_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,6 +38,7 @@ CREATE TABLE `profile` (
 
 LOCK TABLES `profile` WRITE;
 /*!40000 ALTER TABLE `profile` DISABLE KEYS */;
+INSERT INTO `profile` VALUES ('Devine','1','ddevi015@fiu.edu','pw1',1111),('Ellingson','2','telli@fiu.edu','pw2',2222),('Derisca','3','cderi@fiu.edu','pw3',3333),('Escobar','4','aesco@fiu.edu','pw4',4444),('Duque','5','dduqu@fiu.edu','pw5',5555),('Davis','6','pdavi@fiu.edu','pw6',7777);
 /*!40000 ALTER TABLE `profile` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-27 20:39:22
+-- Dump completed on 2022-04-06 23:51:33
