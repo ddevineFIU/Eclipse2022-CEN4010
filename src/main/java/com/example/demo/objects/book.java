@@ -142,6 +142,11 @@ public class book {
 		this.rating = rating;
 	}
 	
+		
+	public String toString(){
+	    return getBook() + " By: " + getauthor();
+	  }
+	
 	
 
 }

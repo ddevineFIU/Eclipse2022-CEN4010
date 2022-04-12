@@ -26,7 +26,7 @@ public class bookController {
 	private bookRespository BooksRepository;
 
 	@GetMapping(path = "/search/top10")
-	public @ResponseBody Iterable<book> gettop10() {
+	public @ResponseBody String gettop10() {
 // This returns a JSON or XML with the Bookss
 		List<book> list = BooksRepository.findAll();
 		List<book> books = new ArrayList<>();
@@ -50,8 +50,12 @@ public class bookController {
 
 		}
 		sort(books);
-		Iterable<book> rbooks = books;
-		return rbooks;
+		
+		String lob = "Top 10 Books\n";
+		for(int i = 0; i < books.size(); i++) {
+			lob += books.get(i) + "Number sold :" + books.get(i).getcopiessold()  + "\n";
+		}
+		return lob;
 	}
 
 	private void sort(List<book> books) {
@@ -71,7 +75,7 @@ public class bookController {
 	
 	
 	@GetMapping(path = "/search/bookPlacement")
-	public @ResponseBody Iterable<book> getbookPlacement(int place) {
+	public @ResponseBody String getbookPlacement(int place) {
 
 		List<book> list = BooksRepository.findAll();
 		List<book> books = new ArrayList<>();
@@ -83,8 +87,11 @@ public class bookController {
 			books.add(list.get(i));
 		}
 	
-		Iterable<book> rbooks = books;
-		return rbooks;
+		String lob = "Books by placement \n";
+		for(int i = 0; i < books.size(); i++) {
+			lob += books.get(i) + "Index: " + i + "\n";
+		}
+		return lob;
 	}
 
 	
@@ -97,8 +104,16 @@ public class bookController {
 	
 	//example search
 	@GetMapping(path = "/search/genre")
-	public ResponseEntity<List<book>> getBooksBygenre(@RequestParam String genre) {
-		return new ResponseEntity<>(BooksRepository.findBygenreIgnoreCase(genre), HttpStatus.OK);
+	public String getBooksBygenre(@RequestParam String genre) {
+		
+		List<book> list =	BooksRepository.findBygenreIgnoreCase(genre);
+		String lob = "List of Books by Genre\n";
+		
+		for(int i = 0 ; i < list.size(); i++) {
+			lob += list.get(i).getBook() + " By: " + list.get(i).getauthor() + "\n";
+			
+		}
+		return lob;
 
 	}
 
@@ -109,8 +124,16 @@ public class bookController {
 	}
 	
 	@GetMapping(path = "/search/AllBooks")
-	public @ResponseBody Iterable<book> getBooks() {
-		return BooksRepository.findAll();
+	public @ResponseBody String getBooks() {
+		
+		List<book> list =	BooksRepository.findAll();
+		
+		String lob = "All books \n";
+		for(int i = 0; i < list.size(); i++) {
+			lob += list.get(i) + "Number sold :" + list.get(i).getcopiessold()  + "\n";
+		}
+		return lob;
+ 
 
 	}
 
@@ -121,8 +144,19 @@ public class bookController {
 	}
 	
 	@GetMapping(path = "/search/Raiting")
-	public ResponseEntity<List<book>> findByAuthor(@RequestParam float rating) {
-		return new ResponseEntity<>(BooksRepository.findByratingGreaterThanEqual(rating), HttpStatus.OK);
+	public String findByAuthor(@RequestParam float rating) {
+		
+		
+		
+		List<book> list =	BooksRepository.findByratingGreaterThanEqual(rating);
+		
+		String lob = "All books \n";
+		for(int i = 0; i < list.size(); i++) {
+			lob += list.get(i) + "Curent Rating:" + list.get(i).getRating()  + "\n";
+		}
+		return lob;
+		
+	
 
 	}
 	
