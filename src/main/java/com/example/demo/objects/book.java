@@ -35,13 +35,13 @@ public class book {
 	
 	private Integer copiessold;
 	
-	private Float rating;
+	private float rating;
 	//
 	public book() {
 
 	}
 	public book(Integer isbn, String author, String bookname, String bookdescrip, Float price,
-            String genre, String publisher, Integer yearpublished, Integer copiessold) {
+            String genre, String publisher, Integer yearpublished, Integer copiessold,double d) {
 		super();
 		this.isbn = isbn;
 		this.author = author;
@@ -52,6 +52,7 @@ public class book {
 		this.publisher = publisher;
 		this.yearpublished = yearpublished;
 		this.copiessold = copiessold;
+		this.rating = (float) d;
 	}
 
 	public String getBook() {

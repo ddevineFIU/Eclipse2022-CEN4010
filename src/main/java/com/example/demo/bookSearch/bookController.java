@@ -78,7 +78,7 @@ public class bookController {
 		if(place >= list.size()) {
 			place = list.size()-1;
 		}
-		for (int i = place; i > 0; i--) {
+		for (int i = place-1; i >= 0; i--) {
 			
 			books.add(list.get(i));
 		}
@@ -131,7 +131,7 @@ public class bookController {
 	public @ResponseBody Iterable<book> getAllBooksADD(Integer isbn, String author, String bookname, String bookdescrip, Float price,
             String genre, String publisher, Integer yearpublished, Integer copiessold) {
 	// This returns a JSON or XML with the Books	
-		BooksRepository.saveAndFlush(new book(isbn, author, bookname, bookdescrip, price, genre, publisher, yearpublished, copiessold));
+		BooksRepository.saveAndFlush(new book(isbn, author, bookname, bookdescrip, price, genre, publisher, yearpublished, copiessold,0.0));
 		return BooksRepository.findAll();
 	}
 	
