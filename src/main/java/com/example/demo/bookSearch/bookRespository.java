@@ -24,4 +24,6 @@ public interface bookRespository extends JpaRepository<book, Integer> {
 
 	List<book> findBycopiessold(Integer copiessold);
 
+	List<book> findByratingGreaterThanEqual(float rating);
+
 }

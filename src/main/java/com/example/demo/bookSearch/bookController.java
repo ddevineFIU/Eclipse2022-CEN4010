@@ -120,6 +120,13 @@ public class bookController {
 
 	}
 	
+	@GetMapping(path = "/search/Raiting")
+	public ResponseEntity<List<book>> findByAuthor(@RequestParam float rating) {
+		return new ResponseEntity<>(BooksRepository.findByratingGreaterThanEqual(rating), HttpStatus.OK);
+
+	}
+	
+	
 	@GetMapping(path = "/Book/Add") //Must Have 8 KEYS
 	public @ResponseBody Iterable<book> getAllBooksADD(Integer isbn, String author, String bookname, String bookdescrip, Float price,
             String genre, String publisher, Integer yearpublished, Integer copiessold) {

@@ -35,6 +35,7 @@ public class book {
 	
 	private Integer copiessold;
 	
+	private Float rating;
 	//
 	public book() {
 
@@ -132,6 +133,12 @@ public class book {
 
 	public void setBookdescrip(String bookdescrip) {
 		this.bookdescrip = bookdescrip;
+	}
+	public Float getRating() {
+		return rating;
+	}
+	public void setRating(Float rating) {
+		this.rating = rating;
 	}
 	
 	
