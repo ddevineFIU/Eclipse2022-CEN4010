@@ -13,7 +13,7 @@ public class cartController
 {
     final String DB_URL = "jdbc:mysql://localhost:3306/book";
     final String USER = "root";
-    final String PASS = "7896Rocker360*";
+    final String PASS = "Lillia69$";
 
 
     @GetMapping(path = "/UpdateEntry")
