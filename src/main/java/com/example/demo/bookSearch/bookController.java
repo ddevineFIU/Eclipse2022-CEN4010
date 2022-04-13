@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.bookDetails.author;
+import com.example.demo.objects.book;
 
 @RestController
 @Controller // This means that this class is a Controller
@@ -26,7 +26,7 @@ public class bookController {
 	private bookRespository BooksRepository;
 
 	@GetMapping(path = "/search/top10")
-	public @ResponseBody Iterable<book> getAllBookss() {
+	public @ResponseBody String gettop10() {
 // This returns a JSON or XML with the Bookss
 		List<book> list = BooksRepository.findAll();
 		List<book> books = new ArrayList<>();
@@ -50,8 +50,12 @@ public class bookController {
 
 		}
 		sort(books);
-		Iterable<book> rbooks = books;
-		return rbooks;
+		
+		String lob = "Top 10 Books\n";
+		for(int i = 0; i < books.size(); i++) {
+			lob += books.get(i) + "Number sold :" + books.get(i).getcopiessold()  + "\n";
+		}
+		return lob;
 	}
 
 	private void sort(List<book> books) {
@@ -68,13 +72,48 @@ public class bookController {
 
 
 	}
+	
+	
+	@GetMapping(path = "/search/bookPlacement")
+	public @ResponseBody String getbookPlacement(int place) {
+
+		List<book> list = BooksRepository.findAll();
+		List<book> books = new ArrayList<>();
+		if(place >= list.size()) {
+			place = list.size()-1;
+		}
+		for (int i = place-1; i >= 0; i--) {
+			
+			books.add(list.get(i));
+		}
+	
+		String lob = "Books by placement \n";
+		for(int i = 0; i < books.size(); i++) {
+			lob += books.get(i) + "Index: " + i + "\n";
+		}
+		return lob;
+	}
+
+	
+
+
+	
+	
 
 	
 	
 	//example search
 	@GetMapping(path = "/search/genre")
-	public ResponseEntity<List<book>> getBooksByName(@RequestParam String genre) {
-		return new ResponseEntity<>(BooksRepository.findBygenreIgnoreCase(genre), HttpStatus.OK);
+	public String getBooksBygenre(@RequestParam String genre) {
+		
+		List<book> list =	BooksRepository.findBygenreIgnoreCase(genre);
+		String lob = "List of Books by Genre\n";
+		
+		for(int i = 0 ; i < list.size(); i++) {
+			lob += list.get(i).getBook() + " By: " + list.get(i).getauthor() + "\n";
+			
+		}
+		return lob;
 
 	}
 
@@ -85,8 +124,16 @@ public class bookController {
 	}
 	
 	@GetMapping(path = "/search/AllBooks")
-	public @ResponseBody Iterable<book> getBooks() {
-		return BooksRepository.findAll();
+	public @ResponseBody String getBooks() {
+		
+		List<book> list =	BooksRepository.findAll();
+		
+		String lob = "All books \n";
+		for(int i = 0; i < list.size(); i++) {
+			lob += list.get(i) + "Number sold :" + list.get(i).getcopiessold()  + "\n";
+		}
+		return lob;
+ 
 
 	}
 
@@ -96,11 +143,29 @@ public class bookController {
 
 	}
 	
+	@GetMapping(path = "/search/Raiting")
+	public String findByAuthor(@RequestParam float rating) {
+		
+		
+		
+		List<book> list =	BooksRepository.findByratingGreaterThanEqual(rating);
+		
+		String lob = "All books \n";
+		for(int i = 0; i < list.size(); i++) {
+			lob += list.get(i) + "Curent Rating:" + list.get(i).getRating()  + "\n";
+		}
+		return lob;
+		
+	
+
+	}
+	
+	
 	@GetMapping(path = "/Book/Add") //Must Have 8 KEYS
 	public @ResponseBody Iterable<book> getAllBooksADD(Integer isbn, String author, String bookname, String bookdescrip, Float price,
             String genre, String publisher, Integer yearpublished, Integer copiessold) {
 	// This returns a JSON or XML with the Books	
-		BooksRepository.saveAndFlush(new book(isbn, author, bookname, bookdescrip, price, genre, publisher, yearpublished, copiessold));
+		BooksRepository.saveAndFlush(new book(isbn, author, bookname, bookdescrip, price, genre, publisher, yearpublished, copiessold,0.0));
 		return BooksRepository.findAll();
 	}
 	

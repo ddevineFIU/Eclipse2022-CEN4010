@@ -7,6 +7,8 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.example.demo.objects.book;
+
 
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
 // CRUD refers Create, Read, Update, Delete
@@ -21,5 +23,7 @@ public interface bookRespository extends JpaRepository<book, Integer> {
 	List<book> findByisbn(Integer isbn);
 
 	List<book> findBycopiessold(Integer copiessold);
+
+	List<book> findByratingGreaterThanEqual(float rating);
 
 }

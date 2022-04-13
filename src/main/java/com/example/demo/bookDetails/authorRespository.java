@@ -1,4 +1,4 @@
-package com.example.demo.bookDetails;
+package com.example.demo.BookDetails;
 
 
 
@@ -7,7 +7,8 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.bookSearch.book;
+
+import com.example.demo.objects.author;
 
 
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository

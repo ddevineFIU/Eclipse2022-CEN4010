@@ -1,5 +1,5 @@
 // DO NOT FUCKING TOUCH 
-package com.example.demo.bookSearch;
+package com.example.demo.objects;
 
 
 import javax.persistence.Entity;
@@ -35,12 +35,13 @@ public class book {
 	
 	private Integer copiessold;
 	
+	private float rating;
 	//
 	public book() {
 
 	}
 	public book(Integer isbn, String author, String bookname, String bookdescrip, Float price,
-            String genre, String publisher, Integer yearpublished, Integer copiessold) {
+            String genre, String publisher, Integer yearpublished, Integer copiessold,double d) {
 		super();
 		this.isbn = isbn;
 		this.author = author;
@@ -51,6 +52,7 @@ public class book {
 		this.publisher = publisher;
 		this.yearpublished = yearpublished;
 		this.copiessold = copiessold;
+		this.rating = (float) d;
 	}
 
 	public String getBook() {
@@ -133,6 +135,17 @@ public class book {
 	public void setBookdescrip(String bookdescrip) {
 		this.bookdescrip = bookdescrip;
 	}
+	public Float getRating() {
+		return rating;
+	}
+	public void setRating(Float rating) {
+		this.rating = rating;
+	}
+	
+		
+	public String toString(){
+	    return getBook() + " By: " + getauthor();
+	  }
 	
 	
 
